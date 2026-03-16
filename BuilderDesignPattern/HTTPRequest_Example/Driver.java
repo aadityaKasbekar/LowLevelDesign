@@ -39,6 +39,7 @@ public class Driver {
 
 		System.out.println(getRequest2);
 		System.out.println(postRequest2);
+		System.out.println(getRequest2);
 	}
 
 }
