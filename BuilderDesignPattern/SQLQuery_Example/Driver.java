@@ -3,7 +3,7 @@ package BuilderDesignPattern.SQLQuery_Example;
 import BuilderDesignPattern.SQLQuery_Example.Products.SQLQuery;
 
 public class Driver {
-	public static void main(String[] args) {
+	static void main(String[] args) {
 		SQLQuery query1 = new SQLQuery.Builder("users")
 								  .select("name", "email")
 								  .where("age > 18")
