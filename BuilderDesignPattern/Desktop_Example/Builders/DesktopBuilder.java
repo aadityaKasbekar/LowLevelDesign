@@ -1,6 +1,8 @@
-package BuilderDesignPattern.Desktop_Example;
+package BuilderDesignPattern.Desktop_Example.Builders;
 
-abstract class DesktopBuilder {
+import BuilderDesignPattern.Desktop_Example.Products.Desktop;
+
+public abstract class DesktopBuilder {
 	protected Desktop desktop;
 
 	public DesktopBuilder() {

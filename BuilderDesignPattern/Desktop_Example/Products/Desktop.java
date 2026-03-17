@@ -1,4 +1,4 @@
-package BuilderDesignPattern.Desktop_Example;
+package BuilderDesignPattern.Desktop_Example.Products;
 
 
 public class Desktop {
