@@ -1,4 +1,7 @@
-package BuilderDesignPattern.Desktop_Example;
+package BuilderDesignPattern.Desktop_Example.Directors;
+
+import BuilderDesignPattern.Desktop_Example.Builders.DesktopBuilder;
+import BuilderDesignPattern.Desktop_Example.Products.Desktop;
 
 public class Director {
     private DesktopBuilder desktopBuilder;
@@ -7,11 +10,11 @@ public class Director {
         this.desktopBuilder = desktopBuilder;
     }
 
-    Desktop getDesktop() {
+    public Desktop getDesktop() {
         return desktopBuilder.getDesktop();
     }
 
-    Desktop buildDeskstop() {
+    public Desktop buildDeskstop() {
         desktopBuilder.buildMonitor();
         desktopBuilder.buildKeyboard();
         desktopBuilder.buildMouse();

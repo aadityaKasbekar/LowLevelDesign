@@ -1,4 +1,4 @@
-package BuilderDesignPattern.Desktop_Example;
+package BuilderDesignPattern.Desktop_Example.Builders;
 
 public class DellDektopBuilder extends DesktopBuilder {
 
