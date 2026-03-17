@@ -4,22 +4,14 @@ from BuilderDesignPattern.Email_Example_Python.Products.Email import Email
 
 class EmailBuilder:
 
-	__to: str
-	__subject: str
-	__cc: list[ str ]
-	__bcc: list[ str ]
-	__body: str
-	__attachment: str
-	__emailPriority: EmailPriorityTypes
-
 	def __init__(self, recipientAddr: str, subject: str):
-		self.__to = recipientAddr
-		self.__subject = subject
-		self.__cc = []
-		self.__bcc = []
-		self.__body = ""
-		self.__attachment = ""
-		self.__emailPriority = EmailPriorityTypes.NORMAL
+		self.__to: str = recipientAddr
+		self.__subject: str = subject
+		self.__cc: list[str] = []
+		self.__bcc: list[str] = []
+		self.__body: str = ""
+		self.__attachment: str = ""
+		self.__emailPriority: EmailPriorityTypes = EmailPriorityTypes.NORMAL
 
 	def updateRecipientAddr(self, recipientAddr: str) -> "EmailBuilder":
 		self.__to = recipientAddr

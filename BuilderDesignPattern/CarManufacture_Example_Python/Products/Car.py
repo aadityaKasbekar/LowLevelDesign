@@ -9,24 +9,17 @@ from BuilderDesignPattern.CarManufacture_Example_Python.ProductsTypes.CarsType i
 
 
 class Car(Product):
-	_model: Final[ str ]
-	_type: Final[ CarsType ]
-	_seat: Final[ int ]
-	_engine: Final[ Engine ]
-	_transmission: Final[ Transmission ]
-	_tripComputer: Final[ TripComputer ]
-	_gpsNavigator: Final[ GPSNavigator ]
-	_fuel: int
 
-	def __init__(self, model: str, type: CarsType, seat: int, engine: Engine, trans: Transmission, tripComp: TripComputer, gpsNav: GPSNavigator):
+	def __init__(self, model: str, carsType: CarsType, seat: int, engine: Engine, trans: Transmission, tripComp: TripComputer, gpsNav: GPSNavigator):
 		super().__init__()
-		self._model = model
-		self._type = type
-		self._seat = seat
-		self._engine = engine
-		self._transmission = trans
-		self._tripComputer = tripComp
-		self._gpsNavigator = gpsNav
+		self._model: Final[ str ] = model
+		self._type: Final[ CarsType ] = carsType
+		self._seat: Final[ int ] = seat
+		self._engine: Final[ Engine ] = engine
+		self._transmission: Final[ Transmission ] = trans
+		self._tripComputer: Final[ TripComputer ] = tripComp
+		self._gpsNavigator: Final[ GPSNavigator ] = gpsNav
+		self._fuel: int = 0
 		if self._tripComputer is not None:
 			self._tripComputer.setCar(self)
 

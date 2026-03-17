@@ -1,4 +1,4 @@
-from BuilderDesignPattern.Email_Example_Python.Builders.EmailBuilder import EmailBuilder
+from BuilderDesignPattern.Email_Example_Python.Builder.EmailBuilder import EmailBuilder
 from BuilderDesignPattern.Email_Example_Python.Director.Director import Director
 from BuilderDesignPattern.Email_Example_Python.ProductTypes.EmailPriorityTypes import EmailPriorityTypes
 from BuilderDesignPattern.Email_Example_Python.Products.Email import Email
