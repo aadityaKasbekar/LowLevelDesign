@@ -7,22 +7,16 @@ from BuilderDesignPattern.CarManufacture_Example_Python.ProductsTypes.CarsType i
 
 
 class CarManual(Product):
-	_model: str
-	_type: CarsType
-	_seat: int
-	_engine: Engine
-	_transmission: Transmission
-	_tripComputer: TripComputer
-	_gpsNavigator: GPSNavigator
 
 	def __init__(self, model: str, carType: CarsType, seat: int, engine: Engine, transmission: Transmission, tripComputer: TripComputer, gpsNavigator: GPSNavigator):
-		self._model = model
-		self._type = carType
-		self._seat = seat
-		self._engine = engine
-		self._transmission = transmission
-		self._tripComputer = tripComputer
-		self._gpsNavigator = gpsNavigator
+		super().__init__()
+		self._model: str = model
+		self._type: CarsType = carType
+		self._seat: int = seat
+		self._engine: Engine = engine
+		self._transmission: Transmission = transmission
+		self._tripComputer: TripComputer = tripComputer
+		self._gpsNavigator: GPSNavigator = gpsNavigator
 
 	def __str__(self) -> str:
 		trip_comp = "Functional" if self._tripComputer is not None else "N/A"

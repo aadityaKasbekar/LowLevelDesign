@@ -9,13 +9,15 @@ from BuilderDesignPattern.CarManufacture_Example_Python.Products.CarManual impor
 
 class CarManualBuilder(Builder[CarManual]):
 
-	_model: str
-	_type: CarsType
-	_seats: int
-	_engine: Engine
-	_transmission: Transmission
-	_tripComp: TripComputer
-	_gpsNav: GPSNavigator
+	def __init__(self):
+		super().__init__()
+		self._model: str = ""
+		self._type: CarsType = None
+		self._seats: int = 4
+		self._engine: Engine = None
+		self._transmission: Transmission = None
+		self._tripComp: TripComputer = None
+		self._gpsNav: GPSNavigator = None
 
 	def setCarModel(self, carName: str) -> Builder:
 		self._model = carName

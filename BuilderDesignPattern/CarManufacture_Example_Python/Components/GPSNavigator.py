@@ -1,8 +1,7 @@
 class GPSNavigator:
-	_route: str
 
 	def __init__(self):
-		self._route = "4290 Albany Drive, San Jose, CA, 95129"
+		self._route: str = "4290 Albany Drive, San Jose, CA, 95129"
 
 	def getRoute(self) -> str:
 		return self._route

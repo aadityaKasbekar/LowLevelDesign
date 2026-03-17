@@ -8,13 +8,16 @@ from BuilderDesignPattern.CarManufacture_Example_Python.Products.Car import Car
 
 
 class CarBuilder(Builder[Car]):
-	_model: str
-	_type: CarsType
-	_seat: int
-	_engine: Engine
-	_transmission: Transmission
-	_tripComputer: TripComputer
-	_gpsNavigator: GPSNavigator
+
+	def __init__(self):
+		super().__init__()
+		self._model: str = ""
+		self._type: CarsType = None
+		self._seats: int = 4
+		self._engine: Engine = None
+		self._transmission: Transmission = None
+		self._tripComputer: TripComputer = None
+		self._gpsNavigator: GPSNavigator = None
 
 	def setCarModel(self, carName: str) -> Builder:
 		self._model = carName
@@ -25,7 +28,7 @@ class CarBuilder(Builder[Car]):
 		return self
 
 	def buildSeats(self, numSeats: int) -> Builder:
-		self._seat = numSeats
+		self._seats = numSeats
 		return self
 
 	def buildEngine(self, carEngine: Engine) -> Builder:

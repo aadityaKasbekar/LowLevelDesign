@@ -4,26 +4,19 @@ from BuilderDesignPattern.Email_Example_Python.ProductTypes.EmailPriorityTypes i
 
 
 class Email:
-	__to: str
-	__subject: str
-	__cc: list[ str ]
-	__bcc: list[ str ]
-	__body: str
-	__attachment: str
-	__emailPriority: EmailPriorityTypes
 
 	def __init__(self, recipient: str, subject: str, cc: list[ str ], bcc: list[
 		str ], body: str, attachment: str, priority: EmailPriorityTypes):
-		self.__to = recipient
-		self.__subject = subject
-		self.__cc = copy.deepcopy(cc)
-		self.__bcc = copy.deepcopy(bcc)
-		self.__body = body
-		self.__attachment = attachment
-		self.__emailPriority = priority
+		self.__to: str = recipient
+		self.__subject: str = subject
+		self.__cc: list[ str ] = copy.deepcopy(cc)
+		self.__bcc: list[ str ] = copy.deepcopy(bcc)
+		self.__body: str = body
+		self.__attachment: str = attachment
+		self.__emailPriority: EmailPriorityTypes = priority
 
 	def getRecipient(self) -> str:
-		return self.___to
+		return self.__to
 
 	def getSubject(self) -> str:
 		return self.__subject

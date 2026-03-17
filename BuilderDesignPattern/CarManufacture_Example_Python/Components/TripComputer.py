@@ -5,23 +5,20 @@ if TYPE_CHECKING:
 
 
 class TripComputer:
+    def __init__(self):
+        self._car: "Car" = None
 
-	_car: "Car"
+    def setCar(self, car: "Car"):
+        self._car = car
 
-	def __init__(self):
-		self._car: "Car" = None
+    def showFuelLevel(self):
+        if self._car:
+            print(f"Fuel Level: {self._car.getFuel()}")
+        else:
+            print("Trip Computer not connected to a car.")
 
-	def setCar(self, car: "Car"):
-		self._car = car
-
-	def showFuelLevel(self):
-		if self._car:
-			print(f"Fuel Level: {self._car.getFuel()}")
-		else:
-			print("Trip Computer not connected to a car.")
-
-	def showStatus(self):
-		if (self._car.getEngine()._isStarted()):
-			print(f"Car is Started.")
-		else:
-			print(f"Car is Turned off.")
+    def showStatus(self):
+        if self._car.getEngine().isStarted():
+            print(f"Car is Started.")
+        else:
+            print(f"Car is Turned off.")
