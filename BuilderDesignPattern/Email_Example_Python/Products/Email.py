@@ -1,4 +1,5 @@
 import copy
+from typing import Final
 
 from BuilderDesignPattern.Email_Example_Python.ProductTypes.EmailPriorityTypes import EmailPriorityTypes
 
@@ -7,13 +8,13 @@ class Email:
 
 	def __init__(self, recipient: str, subject: str, cc: list[ str ], bcc: list[
 		str ], body: str, attachment: str, priority: EmailPriorityTypes):
-		self.__to: str = recipient
-		self.__subject: str = subject
-		self.__cc: list[ str ] = copy.deepcopy(cc)
-		self.__bcc: list[ str ] = copy.deepcopy(bcc)
-		self.__body: str = body
-		self.__attachment: str = attachment
-		self.__emailPriority: EmailPriorityTypes = priority
+		self.__to: Final[ str ] = recipient
+		self.__subject: Final[ str ] = subject
+		self.__cc: Final[ list[ str ] ] = copy.deepcopy(cc)
+		self.__bcc: Final[ list[ str ] ] = copy.deepcopy(bcc)
+		self.__body: Final[ str ] = body
+		self.__attachment: Final[ str ] = attachment
+		self.__emailPriority: Final[ EmailPriorityTypes ] = priority
 
 	def getRecipient(self) -> str:
 		return self.__to
