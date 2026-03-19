@@ -3,6 +3,7 @@ package ObserverDesignPattern.FitnessTrackerApp_Example;
 import ObserverDesignPattern.FitnessTrackerApp_Example.Observers.GoalNotifier;
 import ObserverDesignPattern.FitnessTrackerApp_Example.Observers.LiveActivityDisplay;
 import ObserverDesignPattern.FitnessTrackerApp_Example.Observers.ProgressLogger;
+import ObserverDesignPattern.FitnessTrackerApp_Example.Observers.WeeklySummaryGenerator;
 import ObserverDesignPattern.FitnessTrackerApp_Example.Subjects.FitnessData;
 
 public class Driver {
@@ -12,20 +13,25 @@ public class Driver {
 		LiveActivityDisplay display = new LiveActivityDisplay();
 		ProgressLogger logger = new ProgressLogger();
 		GoalNotifier notifier = new GoalNotifier();
+		WeeklySummaryGenerator summary = new WeeklySummaryGenerator();
 
 		// Register observers
 		fitnessData.registerObserver(display);
 		fitnessData.registerObserver(logger);
 		fitnessData.registerObserver(notifier);
+		fitnessData.registerObserver(summary);
 
 		// Simulate updates
 		fitnessData.newFitnessDataPushed(500, 5, 20);
 		fitnessData.newFitnessDataPushed(9800, 85, 350);
 		fitnessData.newFitnessDataPushed(10100, 90, 380);
 
+		summary.generateReport();
+
 		// Remove logger and reset notifier
 		fitnessData.removeObserver(logger);
 		notifier.reset();
 		fitnessData.dailyReset();
+		summary.reset();
 	}
 }
