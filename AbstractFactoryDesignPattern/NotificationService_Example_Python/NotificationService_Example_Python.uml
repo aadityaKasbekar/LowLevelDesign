@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>Python</ID>
+  <OriginalElement>#/Users/aadityakasbekar/GitHub_Repo/LowLevelDesign/AbstractFactoryDesignPattern/NotificationService_Example_Python</OriginalElement>
+  <nodes>
+    <node x="1395.5" y="990.5">AbstractFactoryDesignPattern.NotificationService_Example_Python.Message.SMSMessage.SMSMessage</node>
+    <node x="12.0" y="1018.5">AbstractFactoryDesignPattern.NotificationService_Example_Python.SenderService.SMSSendingService.SMSSendingService</node>
+    <node x="-495.0" y="1158.5">AbstractFactoryDesignPattern.NotificationService_Example_Python.SenderService.EmailSendingService.EmailSendingService</node>
+    <node x="441.0" y="718.5">AbstractFactoryDesignPattern.NotificationService_Example_Python.Factory.AbstractNotificationFactory.AbstractNotificationFactory</node>
+    <node x="604.0" y="-113.5">object</node>
+    <node x="1822.0" y="1144.5">AbstractFactoryDesignPattern.NotificationService_Example_Python.Factory.EmailNotificationFactory.EmailNotificationFactory</node>
+    <node x="1484.5" y="804.5">AbstractFactoryDesignPattern.NotificationService_Example_Python.Message.NotificationMessage.NotificationMessage</node>
+    <node x="548.5" y="1130.5">AbstractFactoryDesignPattern.NotificationService_Example_Python.Message.EmailMessage.EmailMessage</node>
+    <node x="679.5" y="-281.5">typing.Hashable</node>
+    <node x="126.0" y="82.5">abc.ABCMeta</node>
+    <node x="2329.0" y="1004.5">AbstractFactoryDesignPattern.NotificationService_Example_Python.Factory.SMSNotificationFactory.SMSNotificationFactory</node>
+    <node x="-41.0" y="818.5">AbstractFactoryDesignPattern.NotificationService_Example_Python.SenderService.NotificationService.NotificationService</node>
+    <node x="2442.5" y="804.5">AbstractFactoryDesignPattern.NotificationService_Example_Python.Factory.InterfaceFactory.InterfaceFactory</node>
+    <node x="448.0" y="558.5">AbstractFactoryDesignPattern.NotificationService_Example_Python.Driver.Driver</node>
+    <node x="287.5" y="574.0">abc.ABC</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="AbstractFactoryDesignPattern.NotificationService_Example_Python.Factory.InterfaceFactory.InterfaceFactory" target="abc.ABC" relationship="REALIZATION">
+      <point x="0.0" y="43.5" />
+      <point x="2856.0" y="917.0" />
+      <point x="-58.5" y="917.0" />
+      <point x="-58.5" y="798.0" />
+      <point x="336.0" y="798.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="object" target="typing.Hashable" relationship="REALIZATION">
+      <point x="0.0" y="-281.5" />
+      <point x="0.0" y="29.5" />
+    </edge>
+    <edge source="abc.ABC" target="object" relationship="REALIZATION">
+      <point x="48.5" y="0.0" />
+      <point x="417.0" y="588.0" />
+      <point x="417.0" y="442.0" />
+      <point x="-152.0" y="274.0" />
+    </edge>
+    <edge source="AbstractFactoryDesignPattern.NotificationService_Example_Python.Factory.SMSNotificationFactory.SMSNotificationFactory" target="AbstractFactoryDesignPattern.NotificationService_Example_Python.Factory.InterfaceFactory.InterfaceFactory" relationship="REALIZATION">
+      <point x="0.0" y="43.5" />
+      <point x="2796.0" y="1118.0" />
+      <point x="3287.0" y="1118.0" />
+      <point x="3287.0" y="848.0" />
+      <point x="413.5" y="0.0" />
+    </edge>
+    <edge source="AbstractFactoryDesignPattern.NotificationService_Example_Python.Factory.EmailNotificationFactory.EmailNotificationFactory" target="AbstractFactoryDesignPattern.NotificationService_Example_Python.Factory.InterfaceFactory.InterfaceFactory" relationship="REALIZATION">
+      <point x="0.0" y="-43.5" />
+      <point x="2296.0" y="1118.0" />
+      <point x="3287.0" y="1118.0" />
+      <point x="3287.0" y="848.0" />
+      <point x="413.5" y="0.0" />
+    </edge>
+    <edge source="AbstractFactoryDesignPattern.NotificationService_Example_Python.Message.EmailMessage.EmailMessage" target="AbstractFactoryDesignPattern.NotificationService_Example_Python.Message.NotificationMessage.NotificationMessage" relationship="REALIZATION">
+      <point x="1.5" y="-57.5" />
+      <point x="957.5" y="952.0" />
+      <point x="1921.0" y="952.0" />
+      <point x="-15.0" y="43.5" />
+    </edge>
+    <edge source="AbstractFactoryDesignPattern.NotificationService_Example_Python.SenderService.EmailSendingService.EmailSendingService" target="AbstractFactoryDesignPattern.NotificationService_Example_Python.SenderService.NotificationService.NotificationService" relationship="REALIZATION">
+      <point x="-49.5" y="-29.5" />
+      <point x="-73.5" y="848.0" />
+      <point x="-457.0" y="0.0" />
+    </edge>
+    <edge source="AbstractFactoryDesignPattern.NotificationService_Example_Python.Driver.Driver" target="object" relationship="REALIZATION">
+      <point x="-308.0" y="0.0" />
+      <point x="417.0" y="588.0" />
+      <point x="417.0" y="442.0" />
+      <point x="-152.0" y="274.0" />
+    </edge>
+    <edge source="abc.ABC" target="abc.ABCMeta" relationship="INSTANCEOF">
+      <point x="-20.0" y="-14.0" />
+      <point x="0.0" y="85.5" />
+    </edge>
+    <edge source="AbstractFactoryDesignPattern.NotificationService_Example_Python.SenderService.NotificationService.NotificationService" target="abc.ABC" relationship="REALIZATION">
+      <point x="0.0" y="-29.5" />
+      <point x="416.0" y="798.0" />
+      <point x="336.0" y="798.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="AbstractFactoryDesignPattern.NotificationService_Example_Python.SenderService.SMSSendingService.SMSSendingService" target="AbstractFactoryDesignPattern.NotificationService_Example_Python.SenderService.NotificationService.NotificationService" relationship="REALIZATION">
+      <point x="-464.0" y="0.0" />
+      <point x="-25.0" y="1048.0" />
+      <point x="-25.0" y="1018.0" />
+      <point x="-73.5" y="1018.0" />
+      <point x="-73.5" y="848.0" />
+      <point x="-457.0" y="0.0" />
+    </edge>
+    <edge source="AbstractFactoryDesignPattern.NotificationService_Example_Python.Message.SMSMessage.SMSMessage" target="AbstractFactoryDesignPattern.NotificationService_Example_Python.Message.NotificationMessage.NotificationMessage" relationship="REALIZATION">
+      <point x="0.0" y="-57.5" />
+      <point x="1796.0" y="952.0" />
+      <point x="1921.0" y="952.0" />
+      <point x="-15.0" y="43.5" />
+    </edge>
+    <edge source="AbstractFactoryDesignPattern.NotificationService_Example_Python.Message.NotificationMessage.NotificationMessage" target="abc.ABC" relationship="REALIZATION">
+      <point x="0.0" y="43.5" />
+      <point x="1936.0" y="917.0" />
+      <point x="-58.5" y="917.0" />
+      <point x="-58.5" y="798.0" />
+      <point x="336.0" y="798.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="AbstractFactoryDesignPattern.NotificationService_Example_Python.Factory.AbstractNotificationFactory.AbstractNotificationFactory" target="abc.ABC" relationship="REALIZATION">
+      <point x="0.0" y="29.5" />
+      <point x="936.0" y="798.0" />
+      <point x="336.0" y="798.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.3968963703314045" showDependencies="false" x="2435.0" y="1063.0000000000002" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+</Diagram>
+

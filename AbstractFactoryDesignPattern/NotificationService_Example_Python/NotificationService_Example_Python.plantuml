@@ -1,0 +1,108 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class node13 as "Driver" {
+   main(): 
+}
+class node3 as "Factory.AbstractNotificationFactory" {
+   getNotificationFactory(notificationMode: str): 
+}
+class node5 as "Factory.EmailNotificationFactory" {
+   createMessage(self): 
+   createSenderService(self): 
+}
+class node12 as "Factory.InterfaceFactory" {
+   createMessage(self): 
+   createSenderService(self): 
+}
+class node10 as "Factory.SMSNotificationFactory" {
+   createMessage(self): 
+   createSenderService(self): 
+}
+class node7 as "Message.EmailMessage" {
+   toEmailID: 
+   body: 
+   __init__(self): 
+   setContent(self, to : str, body : str): 
+   formatMessage(self): 
+}
+class node6 as "Message.NotificationMessage" {
+   setContent(self, to : str, body : str): 
+   formatMessage(self): 
+}
+class node0 as "Message.SMSMessage" {
+   toPhoneNum: 
+   body: 
+   __init__(self): 
+   setContent(self, to : str, body : str): 
+   formatMessage(self): 
+}
+class node2 as "SenderService.EmailSendingService" {
+   sendMessage(self, message: NotificationMessage): 
+}
+class node11 as "SenderService.NotificationService" {
+   sendMessage(self, message: NotificationMessage): 
+}
+class node1 as "SenderService.SMSSendingService" {
+   sendMessage(self, message: NotificationMessage): 
+}
+class node14 as "abc.ABC" {
+   __slots__: 
+}
+class node9 as "abc.ABCMeta" {
+   __abstractmethods__: 
+   __new__(
+            mcls: type[_typeshed.Self], name: str, bases: tuple[type, ...], namespace: dict[str, Any], **kwargs: Any
+        ): 
+   __instancecheck__(cls: ABCMeta, instance: Any): 
+   __subclasscheck__(cls: ABCMeta, subclass: type): 
+   _dump_registry(cls: ABCMeta, file: SupportsWrite[str] | None = None): 
+   register(cls: ABCMeta, subclass: type[_T]): 
+}
+class object {
+   __doc__: 
+   __dict__: 
+   __module__: 
+   __annotations__: 
+   __class__(self): 
+   __class__(self, type: type[Self], /): 
+   __init__(self): 
+   __new__(cls): 
+   __setattr__(self, name: str, value: Any, /): 
+   __delattr__(self, name: str, /): 
+   __eq__(self, value: object, /): 
+   __ne__(self, value: object, /): 
+   __str__(self): 
+   __repr__(self): 
+   __hash__(self): 
+   __format__(self, format_spec: str, /): 
+   __getattribute__(self, name: str, /): 
+   __sizeof__(self): 
+   __reduce__(self): 
+   __reduce_ex__(self, protocol: SupportsIndex, /): 
+   __dir__(self): 
+   __init_subclass__(cls): 
+   __subclasshook__(cls, subclass: type, /): 
+}
+class node8 as "typing.Hashable" {
+   __hash__(self): 
+}
+
+node13  ^-[#595959,plain]-  object 
+node3   ^-[#595959,plain]-  node14 
+node5   ^-[#595959,plain]-  node12 
+node12  ^-[#595959,plain]-  node14 
+node10  ^-[#595959,plain]-  node12 
+node7   ^-[#595959,plain]-  node6  
+node6   ^-[#595959,plain]-  node14 
+node0   ^-[#595959,plain]-  node6  
+node2   ^-[#595959,plain]-  node11 
+node11  ^-[#595959,plain]-  node14 
+node1   ^-[#595959,plain]-  node11 
+node14  <-[#595959,dashed]- "isinstanceof" node9  
+node14  ^-[#595959,plain]-  object 
+object  ^-[#595959,dashed]-  node8  
+@enduml

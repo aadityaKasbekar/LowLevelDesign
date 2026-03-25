@@ -1,0 +1,183 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class node7 as "Builders.Builder" {
+   __init__(self): 
+   setCarModel(self, model: str): 
+   setCarType(self, type: CarsType): 
+   buildSeats(self, seats: int): 
+   buildEngine(self, engine: Engine): 
+   buildTransmission(self, transmission: Transmission): 
+   buildTripComputer(self, tripComp: TripComputer): 
+   buildGPSNavigator(self, gpsNAV: GPSNavigator): 
+   build(self): 
+}
+class node14 as "Builders.CarBuilder" {
+   __init__(self): 
+   setCarModel(self, carName: str): 
+   setCarType(self, carType: CarsType): 
+   buildSeats(self, numSeats: int): 
+   buildEngine(self, carEngine: Engine): 
+   buildTransmission(self, carTransmission: Transmission): 
+   buildTripComputer(self, carTripComputer: TripComputer): 
+   buildGPSNavigator(self, carGPSNav: GPSNavigator): 
+   build(self): 
+}
+class node9 as "Builders.CarManualBuilder" {
+   __init__(self): 
+   setCarModel(self, carName: str): 
+   setCarType(self, carType: CarsType): 
+   buildSeats(self, numSeats: int): 
+   buildEngine(self, carEngine: Engine): 
+   buildTransmission(self, carTransmission: Transmission): 
+   buildTripComputer(self, carTripComputer: TripComputer): 
+   buildGPSNavigator(self, carGPSNav: GPSNavigator): 
+   build(self): 
+}
+class node3 as "Components.Engine" {
+   __init__(self, engineVolume, engineMileage): 
+   isStarted(self): 
+   turnOn(self): 
+   turnOff(self): 
+   go(self, miles: int): 
+   getVolume(self): 
+   getMileage(self): 
+}
+class node18 as "Components.GPSNavigator" {
+   __init__(self): 
+   getRoute(self): 
+   setRoute(self, destinationAddress: str): 
+   __repr__(self): 
+   __str__(self): 
+}
+class node12 as "Components.Transmission"
+class node13 as "Components.TripComputer.TripComputer" {
+   __init__(self): 
+   setCar(self, car: "Car"): 
+   showFuelLevel(self): 
+   showStatus(self): 
+}
+class node0 as "Directors.CarDirector" {
+   constructSportsCar(self, builder: Builder[T]): 
+   constructSedanCar(self, builder: Builder[T]): 
+   constructSUVCar(self, builder: Builder[T]): 
+   constructElectricCar(self, builder: Builder[T]): 
+}
+class node4 as "Driver.Driver" {
+   main(): 
+}
+class node8 as "Products.Car" {
+   __init__(self, model: str, carsType: CarsType, seat: int, engine: Engine, trans: Transmission, tripComp: TripComputer, gpsNav: GPSNavigator): 
+   getModel(self): 
+   getCarType(self): 
+   getSeat(self): 
+   getEngine(self): 
+   getTransmission(self): 
+   getTripComputer(self): 
+   getGPSNavigator(self): 
+   getFuel(self): 
+   setFuel(self, fuel: int): 
+   __str__(self): 
+}
+class node16 as "Products.CarManual" {
+   __init__(self, model: str, carType: CarsType, seat: int, engine: Engine, transmission: Transmission, tripComputer: TripComputer, gpsNavigator: GPSNavigator): 
+   __str__(self): 
+}
+class node15 as "Products.Product" {
+   __init__(self): 
+}
+class node1 as "ProductsTypes.CarsType.CarsType"
+class node6 as "abc.ABC"
+class node17 as "abc.ABCMeta" {
+   __new__(
+            mcls: type[_typeshed.Self], name: str, bases: tuple[type, ...], namespace: dict[str, Any], **kwargs: Any
+        ): 
+   __instancecheck__(cls: ABCMeta, instance: Any): 
+   __subclasscheck__(cls: ABCMeta, subclass: type): 
+   _dump_registry(cls: ABCMeta, file: SupportsWrite[str] | None = None): 
+   register(cls: ABCMeta, subclass: type[_T]): 
+}
+class node10 as "enum.Enum" {
+   name(self): 
+   value(self): 
+   _missing_(cls, value: object): 
+   _generate_next_value_(name: str, start: int, count: int, last_values: list[Any]): 
+   __new__(cls, value: object): 
+   __dir__(self): 
+   __hash__(self): 
+   __format__(self, format_spec: str): 
+   __reduce_ex__(self, proto: Unused): 
+}
+class node11 as "enum.EnumMeta" {
+   __new__(
+            metacls: type[_typeshed.Self], cls: str, bases: tuple[type, ...], classdict: _EnumDict, **kwds: Any
+        ): 
+   __prepare__(metacls, cls: str, bases: tuple[type, ...], **kwds: Any): 
+   __iter__(self: type[_EnumMemberT]): 
+   __reversed__(self: type[_EnumMemberT]): 
+   __contains__(self: type[Any], member: object): 
+   __getitem__(self: type[_EnumMemberT], name: str): 
+   __members__(self: type[_EnumMemberT]): 
+   __len__(self): 
+   __bool__(self): 
+   __dir__(self): 
+   __call__(cls: type[_EnumMemberT], value: Any, names: None = None): 
+   __call__(
+            cls,
+            value: str,
+            names: _EnumNames,
+            *,
+            module: str | None = None,
+            qualname: str | None = None,
+            type: type | None = None,
+            start: int = 1,
+        ): 
+}
+class object {
+   __class__(self): 
+   __class__(self, type: type[Self], /): 
+   __init__(self): 
+   __new__(cls): 
+   __setattr__(self, name: str, value: Any, /): 
+   __delattr__(self, name: str, /): 
+   __eq__(self, value: object, /): 
+   __ne__(self, value: object, /): 
+   __str__(self): 
+   __repr__(self): 
+   __hash__(self): 
+   __format__(self, format_spec: str, /): 
+   __getattribute__(self, name: str, /): 
+   __sizeof__(self): 
+   __reduce__(self): 
+   __reduce_ex__(self, protocol: SupportsIndex, /): 
+   __dir__(self): 
+   __init_subclass__(cls): 
+   __subclasshook__(cls, subclass: type, /): 
+}
+class node5 as "typing.Hashable" {
+   __hash__(self): 
+}
+
+node7   ^-[#595959,plain]-  node6  
+node14  ^-[#595959,plain]-  node7  
+node9   ^-[#595959,plain]-  node7  
+node3   ^-[#595959,plain]-  object 
+node18  ^-[#595959,plain]-  object 
+node12  ^-[#595959,plain]-  node10 
+node13  ^-[#595959,plain]-  object 
+node0   ^-[#595959,plain]-  object 
+node4   ^-[#595959,plain]-  object 
+node8   ^-[#595959,plain]-  node15 
+node16  ^-[#595959,plain]-  node15 
+node15  ^-[#595959,plain]-  object 
+node1   ^-[#595959,plain]-  node10 
+node6   <-[#595959,dashed]- "isinstanceof" node17 
+node6   ^-[#595959,plain]-  object 
+node10  <-[#595959,dashed]- "isinstanceof" node11 
+node10  ^-[#595959,plain]-  object 
+node10  ^-[#595959,dashed]-  node5  
+object  ^-[#595959,dashed]-  node5  
+@enduml
